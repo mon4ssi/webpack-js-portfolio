@@ -3,6 +3,8 @@ import GithubIcon from '@/assets/images/github.png'
 import InstagramIcon from '@/assets/images/instagram.png'
 import TwitterIcon from '@/assets/images/twitter.png'
 
+const nickname = 'mon4ssi'
+
 const Template = async () => {
   const data = await getData();
   const view = `
@@ -26,13 +28,13 @@ const Template = async () => {
           </ul>
         </div>
         <div class="card_social">
-          <a href="https://twitter.com/gndx">
+          <a href="https://twitter.com/${nickname}">
             <img src="${TwitterIcon}" />
           </a>
-          <a href="https://github.com/gndx">
+          <a href="https://github.com/${nickname}">
             <img src="${GithubIcon}" />
           </a>
-          <a href="https://instagram.com/gndx">
+          <a href="https://instagram.com/${nickname}">
             <img src="${InstagramIcon}" />
           </a>
         </div>
