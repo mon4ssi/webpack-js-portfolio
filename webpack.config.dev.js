@@ -9,12 +9,12 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
-        assetModuleFilename: 'assets/images/[hash][ext][query]'
+        assetModuleFilename: 'assets/images/[hash][ext][query]',
+        clean: true,
     },
     mode: 'development',
-    watch: true,
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js', '.jsx'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
         }
@@ -22,15 +22,29 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.m?js$/,
+                test: /\.(m?js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                 }
             },
             {
+                test: /\.html$/,
+                use: [
+                    { loader: 'html-loader' }
+                ]
+            },
+            {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
+            },
+            {
+                test: /\.s[ac]ss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ]
             },
             {
                 test: /\.png/,
@@ -64,4 +78,11 @@ module.exports = {
         }),
         new DotEnv(),
     ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        compress: true,
+        port: 7420,
+    },
 }
