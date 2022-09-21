@@ -1,4 +1,4 @@
-export default function CardHeader ({ children }) {
+export function CardHeader ({ children }) {
     return (
         <header className="card-header">
             {children}

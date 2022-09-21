@@ -1,4 +1,4 @@
-export default function CardSection ({ children }) {
+export function CardSection ({ children }) {
     return (
         <section className="card-body">
             {children}

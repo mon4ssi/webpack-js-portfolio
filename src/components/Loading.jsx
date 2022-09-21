@@ -1,4 +1,4 @@
-export default function Loading ({ message }) {
+export function Loading ({ message }) {
     return (
         <div className="loading">
             <p>{message}</p>

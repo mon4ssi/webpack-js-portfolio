@@ -1,4 +1,4 @@
-export default function Card ({ children }) {
+export function Card ({ children }) {
     return (
         <article className="card">
             {children}

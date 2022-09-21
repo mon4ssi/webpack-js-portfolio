@@ -1,4 +1,4 @@
-export default function CardFooter ({ children }) {
+export function CardFooter ({ children }) {
     return (
         <footer className="card-social">
             {children}
