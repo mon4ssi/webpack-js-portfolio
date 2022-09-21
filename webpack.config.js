@@ -15,7 +15,7 @@ module.exports = {
         clean: true,
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js', '.jsx'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
         }
@@ -39,6 +39,14 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
+            },
+            {
+                test: /\.s[ac]ss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ]
             },
             {
                 test: /\.png/,

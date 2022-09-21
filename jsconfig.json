@@ -1,14 +1,12 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
+        "baseUrl": "./",
+        "jsx": "preserve",
         "paths": {
             "@/*": [
-                "src/*"
-            ]
+                "./src/*"
+            ],
         },
-        "target": "ES6",
-        "module": "commonjs",
-        "allowSyntheticDefaultImports": true
     },
     "exclude": [
         "dist",
